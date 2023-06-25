@@ -1,8 +1,8 @@
 import { makeData } from '../../makeData';
 
-import type { TableApiClientReturn } from '../../interfaces';
+import type { Interfaces } from '../../../domain';
 
-export const useTableApiClient = <T>(): TableApiClientReturn<T> => {
+export const restApiClient = <T>(): Interfaces.TableApiClientReturn<T> => {
   const list = async (): Promise<{ data: T[] }> => ({
     data: makeData<T>(30),
   });
