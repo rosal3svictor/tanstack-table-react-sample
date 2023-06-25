@@ -1,7 +1,7 @@
 import { withCRUDTable } from '../../..';
 import { UpdateButton, DeleteButton } from '../../components/Actions';
 
-import { useTableViewModel } from './viewModel';
+import { useTableViewModel } from './infrastructure/viewModel';
 
 import type { Person } from '../../../../interfaces';
 

@@ -1,6 +1,6 @@
 import { withControlledPaginationTable } from '../../..';
 
-import { useTableViewModel } from './viewModel/useTableViewModel';
+import { useTableViewModel } from './infrastructure';
 
 import type { Person } from '../../../../interfaces';
 
