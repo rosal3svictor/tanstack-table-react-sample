@@ -43,7 +43,7 @@ export const withControlledPaginationTable = <T,>(): ((
         viewModel: props.viewModel,
       });
 
-    const table = useReactTable({
+    const table = useReactTable<T>({
       initialState: {
         columnVisibility: props.columnVisibilityState,
       },
