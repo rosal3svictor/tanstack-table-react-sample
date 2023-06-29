@@ -56,6 +56,9 @@ export const withControlledPaginationTable = <T,>(): ((
     });
 
     const table = useReactTable<T>({
+      initialState: {
+        columnVisibility: props.columnVisibilityState,
+      },
       data: dataSource.rows,
       columns,
       pageCount: dataSource.pageCount,

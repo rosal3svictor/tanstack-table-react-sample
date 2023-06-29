@@ -50,6 +50,9 @@ export const withAutomaticPagination = <T,>(): ((
     });
 
     const table = useReactTable<T>({
+      initialState: {
+        columnVisibility: props.columnVisibilityState,
+      },
       data: dataSource,
       columns,
       state: {

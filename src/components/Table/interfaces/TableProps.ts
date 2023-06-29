@@ -1,10 +1,13 @@
-import type { Row } from '@tanstack/react-table';
+import type { Row, VisibilityState } from '@tanstack/react-table';
 
 /**
  * Optional props for the table component.
  */
 export type OptionalTableProps = Partial<{
   styles: Record<string, unknown>;
+  /** It hides columns within the table based on the VisibilityState */
+  columnVisibilityState: VisibilityState;
+  /** Enables the table to come with 'Row Selection' Feature */
   withSelectableRows: boolean;
 }>;
 

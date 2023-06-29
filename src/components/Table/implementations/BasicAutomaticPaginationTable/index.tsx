@@ -6,6 +6,10 @@ import type { Person } from '../../../../interfaces';
 
 export const BasicAutomaticPaginationTable = (): JSX.Element => {
   const Table = withAutomaticPaginationTable<Person>();
+  const columnVisibilityState = {
+    firstName: false,
+    lastName: false,
+  };
 
   return (
     <Table
@@ -16,6 +20,7 @@ export const BasicAutomaticPaginationTable = (): JSX.Element => {
       //   transform: 'translate(-50%, -40%)',
       // }}
       viewModel={useTableViewModel<Person>}
+      columnVisibilityState={columnVisibilityState}
     />
   );
 };
