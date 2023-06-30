@@ -36,6 +36,7 @@ export const withCRUDTable = <T extends object>(): ((
           viewModel={props.viewModel}
           styles={props.styles}
           actions={props.actions}
+          columnVisibilityState={props.columnVisibilityState}
           withControlledPagination={props.withControlledPagination}
           withSelectableRows={props.withSelectableRows}
         />
@@ -48,6 +49,7 @@ export const withCRUDTable = <T extends object>(): ((
           viewModel={props.viewModel}
           styles={props.styles}
           actions={props.actions}
+          columnVisibilityState={props.columnVisibilityState}
           withControlledPagination={props.withControlledPagination}
           withSelectableRows={props.withSelectableRows}
         />
