@@ -1,6 +1,9 @@
 import '../../index.css';
 
-import { withAutomaticPagination, withControlledPaginationTable } from './hocs';
+import {
+  withAutomaticPaginationTable,
+  withControlledPaginationTable,
+} from './hocs';
 
 import type { OptionalTableProps, CRUDActions } from '../../interfaces';
 import type { GeneralTableProps } from './interfaces';
@@ -29,10 +32,10 @@ export const withCRUDTable = <T extends object>(): ((
     props: GeneralTableProps<T> & OptionalTableProps & CRUDActions<T>,
   ): JSX.Element => {
     if (!props.withControlledPagination) {
-      const Table = withAutomaticPagination<T>();
+      const AutomaticPaginationTable = withAutomaticPaginationTable<T>();
 
       return (
-        <Table
+        <AutomaticPaginationTable
           viewModel={props.viewModel}
           styles={props.styles}
           actions={props.actions}
@@ -42,10 +45,10 @@ export const withCRUDTable = <T extends object>(): ((
         />
       );
     } else {
-      const Table = withControlledPaginationTable<T>();
+      const ControlledPaginationTable = withControlledPaginationTable<T>();
 
       return (
-        <Table
+        <ControlledPaginationTable
           viewModel={props.viewModel}
           styles={props.styles}
           actions={props.actions}

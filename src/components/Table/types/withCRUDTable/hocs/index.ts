@@ -1,2 +1,2 @@
-export * from './withAutomaticPagination';
+export * from './withAutomaticPaginationTable';
 export * from './withControlledPaginationTable';

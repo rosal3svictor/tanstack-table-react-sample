@@ -32,7 +32,7 @@ import '../../../../index.css';
  *
  * @returns The enhanced component.
  */
-export const withAutomaticPagination = <T,>(): ((
+export const withAutomaticPaginationTable = <T,>(): ((
   props: GeneralAutomaticPaginationProps<T> &
     OptionalTableProps &
     CRUDActions<T>,
