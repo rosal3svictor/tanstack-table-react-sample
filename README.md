@@ -12,7 +12,6 @@ sample of how to make a standardized implementation for a react app using
 [![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
 [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Testing-Library](https://img.shields.io/badge/-TestingLibrary-%23E33332?style=for-the-badge&logo=testing-library&logoColor=white)](https://testing-library.com/docs/react-testing-library/intro/)
 [![PNPM](https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220)](https://pnpm.io/)
 [![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
 [![Commitizen Friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli)
@@ -21,7 +20,6 @@ sample of how to make a standardized implementation for a react app using
 
 1. [Vitest](https://vitest.dev/)
 2. [Jest DOM](https://github.com/testing-library/jest-dom)
-3. [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 
 ### Documentation Standard
 
@@ -77,3 +75,36 @@ When executed this will prompt you to define:
    - if no, you'll be moved to the next step
 7. The commit will be added to the git history
 8. You can push the prevously created commit to the remote repository
+
+# UNDERSTANDING THE NATURE OF THE DEVELOPMENT:
+
+The idea behind working with tables lies under the word _**requirements**_.
+Whenever we have to implement one, we should ask ourselves:
+
+- What do the table is
+  required to do at this point of the development?
+- Is it just supposed to be listing data?
+- That listing should be _automatic_ or _controlled (server-side)_?
+- Should we provide the user with CRUD actions, should we perform a global search.
+
+Those question samples should better help of to direct the type of table we should
+be creating, making the develper/user experience grow with it.
+
+The concept of requirements previously stated, is tangible in the code through
+the concept _**types**_. They are implementation approaches we can make usage
+of in order to give life of our _**requirement**_. We can enhance each table type
+with extra functionalities such as: multiple row selection, automatic/controlled
+pagination, expandable rows, etc (again, based on requirements) and the can be
+introduced incrementally.
+
+## Table structure
+
+Each table type has:
+
+- index.tsx: Where table layout is done.
+- useTableHelper.ts: Custom hook to manage data, columns and to provide
+  functionalities to each table.
+
+The table types you'll find here cover the most general elemental scenarios for
+any project, the mindset explained here will serve as a guidance to come up with
+more custom tables required in the project you're working on.

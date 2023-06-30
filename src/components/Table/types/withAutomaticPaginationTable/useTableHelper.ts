@@ -35,6 +35,9 @@ export const useTableHelper = <T>(
   /**
    * Defines the table columns based on the data source -
    * {@link https://tanstack.com/table/v8/docs/api/core/column-def | Reference}
+   *
+   * NOTE: You can also customize it to show the data cell in a chip, button,
+   * checkbox input, etc
    */
   const columns = useMemo<Array<ColumnDef<T>>>(
     () =>
