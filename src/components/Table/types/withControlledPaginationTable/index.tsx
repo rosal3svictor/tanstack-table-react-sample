@@ -33,10 +33,12 @@ import type {
  * enhanced table component.
  */
 export const withControlledPaginationTable = <T,>(): ((
-  props: ControlledPaginationTableProps<T> & OptionalTableProps,
+  props: ControlledPaginationTableProps<T> &
+    Omit<OptionalTableProps, 'withGlobalFilter' | 'withSelectableRows'>,
 ) => JSX.Element) => {
   const EnhancedComponent = (
-    props: ControlledPaginationTableProps<T> & OptionalTableProps,
+    props: ControlledPaginationTableProps<T> &
+      Omit<OptionalTableProps, 'withGlobalFilter' | 'withSelectableRows'>,
   ): JSX.Element => {
     const { columns, dataSource, setPagination, pagination, fetchDataSource } =
       useTableHelper<T>({

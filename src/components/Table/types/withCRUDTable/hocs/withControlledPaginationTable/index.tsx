@@ -16,6 +16,7 @@ import {
   TableHeadCell,
   TableRow,
 } from '../../../../components';
+import { DebouncedInput } from '../../components';
 
 import { useTableHelper } from './useTableHelper';
 
@@ -41,6 +42,7 @@ export const withControlledPaginationTable = <T,>(): ((
       OptionalTableProps &
       CRUDActions<T>,
   ): JSX.Element => {
+    const [globalFilter, setGlobalFilter] = useState<string>('');
     const [rowSelection, setRowSelection] = useState({});
     const {
       columns,
@@ -74,16 +76,27 @@ export const withControlledPaginationTable = <T,>(): ((
       enableRowSelection: true,
       onRowSelectionChange: setRowSelection,
       onPaginationChange: setPagination,
+      onGlobalFilterChange: setGlobalFilter,
       getCoreRowModel: getCoreRowModel(),
       manualPagination: true,
+      manualFiltering: props.withGlobalFilter ?? false,
     });
 
     useEffect(() => {
       void fetchDataSource();
-    }, [fetchDataSource]);
+    }, [fetchDataSource, globalFilter]);
 
     return (
       <div style={props.styles}>
+        <div>
+          <DebouncedInput
+            value={globalFilter}
+            onChange={(value) => {
+              setGlobalFilter(String(value));
+            }}
+            placeholder="Search all columns..."
+          />
+        </div>
         <TableContainer>
           <TableHead>
             {table.getHeaderGroups().map((headerGroup) => (

@@ -55,6 +55,7 @@ export const withCRUDTable = <T extends object>(): ((
           columnVisibilityState={props.columnVisibilityState}
           withControlledPagination={props.withControlledPagination}
           withSelectableRows={props.withSelectableRows}
+          withGlobalFilter={props.withGlobalFilter}
         />
       );
     }

@@ -22,7 +22,7 @@ import type { GeneralAutomaticPaginationProps } from '../../interfaces';
  */
 export const useTableHelper = <T,>(
   props: Omit<GeneralAutomaticPaginationProps<T>, 'withControlledPagination'> &
-    OptionalTableProps &
+    Omit<OptionalTableProps, 'withGlobalFilter'> &
     CRUDActions<T>,
 ): CommonTableHelperReturn<T> => {
   const tableModel = props.viewModel();

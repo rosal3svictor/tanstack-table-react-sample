@@ -36,7 +36,8 @@ import '../../index.css';
  */
 
 export const withAutomaticPaginationTable = <T,>(): ((
-  props: AutomaticPaginationTableProps<T> & OptionalTableProps,
+  props: AutomaticPaginationTableProps<T> &
+    Omit<OptionalTableProps, 'withGlobalFilter' | 'withSelectableRows'>,
 ) => JSX.Element) => {
   /**
    * Enhanced component that adds automatic pagination functionality to a table.
@@ -47,7 +48,8 @@ export const withAutomaticPaginationTable = <T,>(): ((
    * @returns The JSX element representing the enhanced table component.
    */
   const EnhancedComponent = (
-    props: AutomaticPaginationTableProps<T> & OptionalTableProps,
+    props: AutomaticPaginationTableProps<T> &
+      Omit<OptionalTableProps, 'withGlobalFilter' | 'withSelectableRows'>,
   ): JSX.Element => {
     const { columns, dataSource, error, fetchDataSource } = useTableHelper<T>({
       viewModel: props.viewModel,

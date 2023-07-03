@@ -34,7 +34,7 @@ import '../../../../index.css';
  */
 export const withAutomaticPaginationTable = <T,>(): ((
   props: GeneralAutomaticPaginationProps<T> &
-    OptionalTableProps &
+    Omit<OptionalTableProps, 'withGlobalFilter'> &
     CRUDActions<T>,
 ) => JSX.Element) => {
   const EnhancedComponent = (

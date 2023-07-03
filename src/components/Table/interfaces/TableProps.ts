@@ -9,6 +9,7 @@ export type OptionalTableProps = Partial<{
   columnVisibilityState: VisibilityState;
   /** Enables the table to come with 'Row Selection' Feature */
   withSelectableRows: boolean;
+  withGlobalFilter: boolean;
 }>;
 
 /**

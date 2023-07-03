@@ -18,8 +18,9 @@ export const CRUDControlledPaginationTable = (): JSX.Element => {
       // }}
       viewModel={useTableViewModel<Person>}
       actions={{ update: UpdateButton, delete: DeleteButton }}
-      withControlledPagination={true}
+      withControlledPagination
       withSelectableRows
+      withGlobalFilter
     />
   );
 };
