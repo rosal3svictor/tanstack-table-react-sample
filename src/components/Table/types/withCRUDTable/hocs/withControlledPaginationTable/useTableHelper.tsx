@@ -57,6 +57,15 @@ export const useTableHelper = <T,>(
   /**
    * Fetches the data source for the table.
    */
+  const searchGlobally = useCallback(async () => {
+    const response = await tableModel.list(fetchDataOptions);
+
+    setDataSource(response);
+  }, [fetchDataOptions]);
+
+  /**
+   * Fetches the data source for the table.
+   */
   const fetchDataSource = useCallback(async () => {
     const response = await tableModel.list(fetchDataOptions);
 
@@ -147,5 +156,6 @@ export const useTableHelper = <T,>(
     pagination,
     error: tableModel.error,
     fetchDataSource,
+    searchGlobally,
   };
 };

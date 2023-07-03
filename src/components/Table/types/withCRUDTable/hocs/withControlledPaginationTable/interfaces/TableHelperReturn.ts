@@ -15,4 +15,5 @@ export interface TableHelperReturn<T>
   pagination: PaginationOptions;
   error: string;
   fetchDataSource: () => Promise<void>;
+  searchGlobally: () => Promise<void>;
 }

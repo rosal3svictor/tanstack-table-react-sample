@@ -51,6 +51,7 @@ export const withControlledPaginationTable = <T,>(): ((
       pagination,
       error,
       fetchDataSource,
+      searchGlobally,
     } = useTableHelper<T>({
       actions: props.actions,
       viewModel: props.viewModel,
@@ -83,8 +84,12 @@ export const withControlledPaginationTable = <T,>(): ((
     });
 
     useEffect(() => {
-      void fetchDataSource();
-    }, [fetchDataSource, globalFilter]);
+      if (globalFilter !== '') {
+        void searchGlobally();
+      } else {
+        void fetchDataSource();
+      }
+    }, [fetchDataSource, globalFilter, searchGlobally]);
 
     return (
       <div style={props.styles}>
