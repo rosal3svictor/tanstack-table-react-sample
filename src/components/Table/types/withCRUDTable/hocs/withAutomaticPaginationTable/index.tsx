@@ -39,7 +39,7 @@ export const withAutomaticPaginationTable = <T,>(): ((
 ) => JSX.Element) => {
   const EnhancedComponent = (
     props: GeneralAutomaticPaginationProps<T> &
-      OptionalTableProps &
+      Omit<OptionalTableProps, 'withGlobalFilter'> &
       CRUDActions<T>,
   ): JSX.Element => {
     const [rowSelection, setRowSelection] = useState({});
